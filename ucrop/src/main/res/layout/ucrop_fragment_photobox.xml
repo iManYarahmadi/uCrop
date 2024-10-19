@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/controls_wrapper"
         android:layout_marginBottom="-12dp"
-        android:background="@color/ucrop_color_crop_background">
+        android:background="@color/ucrop_color_crop_background_news">
 
         <ImageView
             android:id="@+id/image_view_logo"
