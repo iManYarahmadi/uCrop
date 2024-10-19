@@ -142,7 +142,7 @@ public class UCropActivity extends AppCompatActivity {
         mainLayout.addView(controllerView); // Add the inflated button layout
 
         // Set up button click listener
-        Button submitButton = controllerView.findViewById(R.id.submit_button);
+        Button submitButton = controllerView.findViewById(R.id.submit_button_text);
         submitButton.setOnClickListener(v -> {
             Log.d("ButtonClick", "Submit button clicked");
             cropAndSaveImage(); // Call your cropping function
@@ -327,6 +327,17 @@ public class UCropActivity extends AppCompatActivity {
         ///submit button text
         mSubmitButtonText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
         mSubmitButtonText = mSubmitButtonText != null ? mSubmitButtonText : "تائید";
+                ///submit button text
+        Button submitButton = findViewById(R.id.submit_button_text);
+
+        // Ensure the button is not null before setting text
+        if (submitButton != null) {
+            submitButton.setText(mSubmitButtonText);  // Set the text for the button
+        } else {
+            Log.e("ButtonError", "Submit button could not be found");
+        }
+
+
         setupAppBar();
         initiateRootViews();
         if (mShowBottomControls) {
@@ -384,9 +395,7 @@ public class UCropActivity extends AppCompatActivity {
             actionBar.setDisplayShowTitleEnabled(false);
         }
 
-        ///submit button text
-        final Button submitButtonText = findViewById(R.id.submit_button_text);
-        submitButtonText.setText(mSubmitButtonText);
+
 
     }
 
