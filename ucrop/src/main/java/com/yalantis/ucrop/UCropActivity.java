@@ -326,16 +326,9 @@ public class UCropActivity extends AppCompatActivity {
         mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background_news));
         ///submit button text
         mSubmitButtonText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
-        mSubmitButtonText = mSubmitButtonText != null ? mSubmitButtonText : "تائید";
+        mSubmitButtonText = mSubmitButtonText != null ? mSubmitButtonText : getResources().getString(R.string.ucrop_submit_button_text);;
                 ///submit button text
-        Button submitButton = findViewById(R.id.submit_button_text);
 
-        // Ensure the button is not null before setting text
-        if (submitButton != null) {
-            submitButton.setText(mSubmitButtonText);  // Set the text for the button
-        } else {
-            Log.e("ButtonError", "Submit button could not be found");
-        }
 
 
         setupAppBar();
@@ -395,7 +388,10 @@ public class UCropActivity extends AppCompatActivity {
             actionBar.setDisplayShowTitleEnabled(false);
         }
 
+        Button submitButton = findViewById(com.yalantis.ucrop.R.id.submit_button_text);
 
+        // Ensure the button is not null before setting text
+            submitButton.setText(mSubmitButtonText);  // Set the text for the button
 
     }
 

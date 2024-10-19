@@ -7,7 +7,6 @@
         android:id="@+id/submit_button_text"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="تایید"
         android:clickable="true"
         android:textColor="#FFFFFF"
         android:background="@drawable/ucrop_custom_button_background"

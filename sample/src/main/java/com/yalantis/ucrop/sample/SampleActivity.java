@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -430,6 +431,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         mToolbarWidgetColor = args.getInt(UCrop.Options.EXTRA_UCROP_WIDGET_COLOR_TOOLBAR, ContextCompat.getColor(this, R.color.ucrop_color_toolbar_widget));
         mToolbarTitle = args.getString(UCrop.Options.EXTRA_UCROP_TITLE_TEXT_TOOLBAR);
         mSubmitButtonText=args.getString(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
+        mSubmitButtonText= mSubmitButtonText != null ? mSubmitButtonText : getResources().getString(R.string.ucrop_submit_button_text);;
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
 
         setupAppBar();
@@ -464,6 +466,11 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }
+        Button submitButton = findViewById(com.yalantis.ucrop.R.id.submit_button_text);
+
+        // Ensure the button is not null before setting text
+            submitButton.setText(mSubmitButtonText);  // Set the text for the button
+
     }
 
     /**
