@@ -68,6 +68,8 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
     private boolean mShowLoader;
 
     private String mToolbarTitle;
+    private String mSubmitButtonText;
+
     @DrawableRes
     private int mToolbarCancelDrawable;
     @DrawableRes
@@ -427,6 +429,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         mToolbarCropDrawable = args.getInt(UCrop.Options.EXTRA_UCROP_WIDGET_CROP_DRAWABLE, R.drawable.ucrop_ic_done);
         mToolbarWidgetColor = args.getInt(UCrop.Options.EXTRA_UCROP_WIDGET_COLOR_TOOLBAR, ContextCompat.getColor(this, R.color.ucrop_color_toolbar_widget));
         mToolbarTitle = args.getString(UCrop.Options.EXTRA_UCROP_TITLE_TEXT_TOOLBAR);
+        mSubmitButtonText=args.getString(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
 
         setupAppBar();
