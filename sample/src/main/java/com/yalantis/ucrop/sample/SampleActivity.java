@@ -433,7 +433,9 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         mSubmitButtonText=args.getString(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
         mSubmitButtonText= mSubmitButtonText != null ? mSubmitButtonText : getResources().getString(R.string.ucrop_submit_button_text);;
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
-
+        View otherLayout = getLayoutInflater().inflate(R.layout.ucrop_submit_button, null);
+        Button submitButton = otherLayout.findViewById(R.id.submit_button_text);
+        submitButton.setText(mSubmitButtonText);  // Set the text for the button
         setupAppBar();
     }
 
@@ -466,10 +468,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }
-        Button submitButton = findViewById(com.yalantis.ucrop.R.id.submit_button_text);
 
-        // Ensure the button is not null before setting text
-            submitButton.setText(mSubmitButtonText);  // Set the text for the button
 
     }
 

@@ -2,7 +2,7 @@
 
     <string name="ucrop_label_original">Original</string>
     <string name="ucrop_label_edit_photo">ویرایش تصویر</string>
-    <string name="ucrop_submit_button_text">تایید</string>
+    <string name="ucrop_submit_button_text" translatable="false">تایید</string>
 
     <string name="ucrop_menu_crop">ویرایش تصویر</string>
 

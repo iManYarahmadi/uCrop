@@ -143,6 +143,7 @@ public class UCropActivity extends AppCompatActivity {
 
         // Set up button click listener
         Button submitButton = controllerView.findViewById(R.id.submit_button_text);
+        submitButton.setText(mSubmitButtonText);
         submitButton.setOnClickListener(v -> {
             Log.d("ButtonClick", "Submit button clicked");
             cropAndSaveImage(); // Call your cropping function
@@ -326,10 +327,8 @@ public class UCropActivity extends AppCompatActivity {
         mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background_news));
         ///submit button text
         mSubmitButtonText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
-        mSubmitButtonText = mSubmitButtonText != null ? mSubmitButtonText : getResources().getString(R.string.ucrop_submit_button_text);;
-                ///submit button text
-
-
+        mSubmitButtonText = mSubmitButtonText != null ? mSubmitButtonText : getResources().getString(R.string.ucrop_submit_button_text);
+        ///submit button text
 
         setupAppBar();
         initiateRootViews();
@@ -353,6 +352,8 @@ public class UCropActivity extends AppCompatActivity {
             mLayoutAspectRatio = findViewById(R.id.layout_aspect_ratio);
             mLayoutRotate = findViewById(R.id.layout_rotate_wheel);
             mLayoutScale = findViewById(R.id.layout_scale_wheel);
+
+
 
             setupAspectRatioWidget(intent);
             setupRotateWidget();
@@ -388,10 +389,6 @@ public class UCropActivity extends AppCompatActivity {
             actionBar.setDisplayShowTitleEnabled(false);
         }
 
-        Button submitButton = findViewById(com.yalantis.ucrop.R.id.submit_button_text);
-
-        // Ensure the button is not null before setting text
-            submitButton.setText(mSubmitButtonText);  // Set the text for the button
 
     }
 
