@@ -86,7 +86,7 @@ public class UCropActivity extends AppCompatActivity {
     private static final int ROTATE_WIDGET_SENSITIVITY_COEFFICIENT = 42;
 
     private String mToolbarTitle;
-
+    private String mSubmitButtonText;
     // Enables dynamic coloring
     private int mToolbarColor;
     private int mStatusBarColor;
@@ -324,7 +324,9 @@ public class UCropActivity extends AppCompatActivity {
         mLogoColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_LOGO_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_default_logo));
         mShowBottomControls = !intent.getBooleanExtra(UCrop.Options.EXTRA_HIDE_BOTTOM_CONTROLS, false);
         mRootViewBackgroundColor = intent.getIntExtra(UCrop.Options.EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR, ContextCompat.getColor(this, R.color.ucrop_color_crop_background_news));
-
+        ///submit button text
+        mSubmitButtonText = intent.getStringExtra(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
+        mSubmitButtonText = mSubmitButtonText != null ? mSubmitButtonText : "تائید";
         setupAppBar();
         initiateRootViews();
         if (mShowBottomControls) {
@@ -381,6 +383,11 @@ public class UCropActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }
+
+        ///submit button text
+        final Button submitButtonText = findViewById(R.id.submit_button_text);
+        submitButtonText.setText(mSubmitButtonText);
+
     }
 
     private void initiateRootViews() {
@@ -398,6 +405,8 @@ public class UCropActivity extends AppCompatActivity {
             params.bottomMargin = 0;
             findViewById(R.id.ucrop_frame).requestLayout();
         }
+
+
     }
 
     private TransformImageView.TransformImageListener mImageListener = new TransformImageView.TransformImageListener() {

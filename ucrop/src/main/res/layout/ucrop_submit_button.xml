@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
 
     <Button
-        android:id="@+id/submit_button"
+        android:id="@+id/submit_button_text"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="تایید"
