@@ -62,6 +62,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
     private CheckBox mCheckBoxHideBottomControls;
     private CheckBox mCheckBoxFreeStyleCrop;
     private Toolbar toolbar;
+    private View otherLayout;
     private ScrollView settingsView;
     private int requestMode = BuildConfig.RequestMode;
 
@@ -70,6 +71,7 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
 
     private String mToolbarTitle;
     private String mSubmitButtonText;
+    private Button submitButton;
 
     @DrawableRes
     private int mToolbarCancelDrawable;
@@ -433,8 +435,8 @@ public class SampleActivity extends BaseActivity implements UCropFragmentCallbac
         mSubmitButtonText=args.getString(UCrop.Options.EXTRA_UCROP_SUBMIT_BUTTON_TEXT);
         mSubmitButtonText= mSubmitButtonText != null ? mSubmitButtonText : getResources().getString(R.string.ucrop_submit_button_text);;
         mToolbarTitle = mToolbarTitle != null ? mToolbarTitle : getResources().getString(R.string.ucrop_label_edit_photo);
-        View otherLayout = getLayoutInflater().inflate(R.layout.ucrop_submit_button, null);
-        Button submitButton = otherLayout.findViewById(R.id.submit_button_text);
+         otherLayout = getLayoutInflater().inflate(R.layout.ucrop_submit_button, null);
+         submitButton = otherLayout.findViewById(R.id.submit_button_text);
         submitButton.setText(mSubmitButtonText);  // Set the text for the button
         setupAppBar();
     }

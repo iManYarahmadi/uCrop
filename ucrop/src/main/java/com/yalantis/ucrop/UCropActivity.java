@@ -99,7 +99,7 @@ public class UCropActivity extends AppCompatActivity {
     @DrawableRes
     private int mToolbarCropDrawable;
     private int mLogoColor;
-
+    private Button submitButton;
     private boolean mShowBottomControls;
     private boolean mShowLoader = true;
 
@@ -142,7 +142,7 @@ public class UCropActivity extends AppCompatActivity {
         mainLayout.addView(controllerView); // Add the inflated button layout
 
         // Set up button click listener
-        Button submitButton = controllerView.findViewById(R.id.submit_button_text);
+        submitButton = controllerView.findViewById(R.id.submit_button_text);
         submitButton.setText(mSubmitButtonText);
         submitButton.setOnClickListener(v -> {
             Log.d("ButtonClick", "Submit button clicked");

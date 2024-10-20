@@ -487,7 +487,12 @@ public class UCrop {
         public void setToolbarTitle(@Nullable String text) {
             mOptionBundle.putString(EXTRA_UCROP_TITLE_TEXT_TOOLBAR, text);
         }
-
+        /**
+         * @param text - desired text for Toolbar title
+         */
+        public void setButtonText(@Nullable String text) {
+            mOptionBundle.putString(EXTRA_UCROP_SUBMIT_BUTTON_TEXT, text);
+        }
         /**
          * @param drawable - desired drawable for the Toolbar left cancel icon
          */
